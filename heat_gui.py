@@ -102,13 +102,13 @@ class App(customtkinter.CTk):
 
         self.btn_layer_settings = customtkinter.CTkButton(master=self.board_menu,
                                                           text="Layer Settings",
-                                                          fg_color=None,  # <- custom tuple-color
+                                                          fg_color='transparent',  # <- custom tuple-color
                                                           command=self.view_layer_settings)
         self.btn_layer_settings.pack(pady=10)
 
         self.btn_board_component_settings = customtkinter.CTkButton(master=self.board_menu,
                                                                     text="Board Components",
-                                                                    fg_color=None,  # <- custom tuple-color
+                                                                    fg_color='transparent',  # <- custom tuple-color
                                                                     command=self.view_board_component_settings)
         self.btn_board_component_settings.pack(pady=10)
 
@@ -128,7 +128,7 @@ class App(customtkinter.CTk):
 
         self.lbl_board_cond_material = customtkinter.CTkLabel(master=self.board_settings_frame,
                                                               text="Conductor Material:",
-                                                              text_font=(
+                                                              font=(
                                                                   "Roboto Medium", -16))  # font name and size in px
         self.lbl_board_cond_material.grid(row=0, column=0, padx=5, pady=5, sticky="we")
         cond_material_options = [
@@ -145,7 +145,7 @@ class App(customtkinter.CTk):
 
         self.lbl_board_diel_material = customtkinter.CTkLabel(master=self.board_settings_frame,
                                                               text="Dielectric Material:",
-                                                              text_font=(
+                                                              font=(
                                                                   "Roboto Medium", -16))  # font name and size in px
         self.lbl_board_diel_material.grid(row=1, column=0, padx=5, pady=5, sticky="we")
         diel_material_options = [
@@ -159,7 +159,7 @@ class App(customtkinter.CTk):
 
         self.lbl_board_plating_thickness = customtkinter.CTkLabel(master=self.board_settings_frame,
                                                                   text="Plating Thickness [oz]:",
-                                                                  text_font=(
+                                                                  font=(
                                                                       "Roboto Medium", -16))  # font name and size in px
         self.lbl_board_plating_thickness.grid(row=2, column=0, padx=5, pady=5, sticky="we")
         thickness_options = [
@@ -175,7 +175,7 @@ class App(customtkinter.CTk):
 
         self.lbl_board_drill_file = customtkinter.CTkLabel(master=self.board_settings_frame,
                                                            text="Drill File:",
-                                                           text_font=(
+                                                           font=(
                                                                "Roboto Medium", -16))  # font name and size in px
         self.lbl_board_drill_file.grid(row=3, column=0, padx=5, pady=5, sticky="we")
         self.ent_drill_file_location = customtkinter.CTkEntry(master=self.board_settings_frame, width=120)
@@ -187,7 +187,7 @@ class App(customtkinter.CTk):
 
         self.lbl_board_keepout_file = customtkinter.CTkLabel(master=self.board_settings_frame,
                                                              text="Keepout File:",
-                                                             text_font=(
+                                                             font=(
                                                                  "Roboto Medium", -16))  # font name and size in px
         self.lbl_board_keepout_file.grid(row=4, column=0, padx=5, pady=5, sticky="we")
         self.ent_keepout_file_location = customtkinter.CTkEntry(master=self.board_settings_frame, width=120)
@@ -241,13 +241,13 @@ class App(customtkinter.CTk):
 
         self.lbl_layer_edit = customtkinter.CTkLabel(master=self.layer_settings_frame,
                                                      text="Layer Properties:",
-                                                     text_font=(
+                                                     font=(
                                                          "Roboto Medium", -16))  # font name and size in px
         self.lbl_layer_edit.grid(row=3, column=0, columnspan=3, padx=5, pady=5, sticky="we")
 
         self.lbl_layer_name = customtkinter.CTkLabel(master=self.layer_settings_frame,
                                                      text="Name:",
-                                                     text_font=(
+                                                     font=(
                                                          "Roboto Medium", -16))  # font name and size in px
         self.lbl_layer_name.grid(row=4, column=0, padx=5, pady=5, sticky="we")
         self.ent_layer_name = customtkinter.CTkEntry(master=self.layer_settings_frame, width=120)
@@ -255,7 +255,7 @@ class App(customtkinter.CTk):
 
         self.lbl_layer_type = customtkinter.CTkLabel(master=self.layer_settings_frame,
                                                      text="Type:",
-                                                     text_font=(
+                                                     font=(
                                                          "Roboto Medium", -16))  # font name and size in px
         self.lbl_layer_type.grid(row=5, column=0, padx=5, pady=5, sticky="we")
         layer_type_options = [
@@ -270,7 +270,7 @@ class App(customtkinter.CTk):
 
         self.lbl_layer_thickness = customtkinter.CTkLabel(master=self.layer_settings_frame,
                                                           text="Thickness [mil]:",
-                                                          text_font=(
+                                                          font=(
                                                               "Roboto Medium", -16))  # font name and size in px
         self.lbl_layer_thickness.grid(row=6, column=0, padx=5, pady=5, sticky="we")
         self.ent_layer_thickness = customtkinter.CTkEntry(master=self.layer_settings_frame, width=120)
@@ -278,7 +278,7 @@ class App(customtkinter.CTk):
 
         self.lbl_layer_gerber_file = customtkinter.CTkLabel(master=self.layer_settings_frame,
                                                             text="Gerber File:",
-                                                            text_font=(
+                                                            font=(
                                                                 "Roboto Medium", -16))  # font name and size in px
         self.lbl_layer_gerber_file.grid(row=7, column=0, padx=5, pady=5, sticky="we")
         self.ent_gerber_file_location = customtkinter.CTkEntry(master=self.layer_settings_frame, width=120)
@@ -368,20 +368,20 @@ class App(customtkinter.CTk):
 
         self.lbl_board_components_edit = customtkinter.CTkLabel(master=self.board_components_frame,
                                                                 text="Component Properties:",
-                                                                text_font=(
+                                                                font=(
                                                                     "Roboto Medium", -16))  # font name and size in px
         self.lbl_board_components_edit.grid(row=2, column=0, columnspan=3, padx=5, pady=5, sticky="we")
 
         self.lbl_board_components_name = customtkinter.CTkLabel(master=self.board_components_frame,
                                                                 text="Name:",
-                                                                text_font=("Roboto Medium", -16))
+                                                                font=("Roboto Medium", -16))
         self.lbl_board_components_name.grid(row=3, column=0, padx=5, pady=5, sticky="we")
         self.ent_board_components_name = customtkinter.CTkEntry(master=self.board_components_frame, width=120)
         self.ent_board_components_name.grid(row=3, column=1, padx=5, pady=5, sticky="we")
 
         self.lbl_board_component_side = customtkinter.CTkLabel(master=self.board_components_frame,
                                                                text="Board Side:",
-                                                               text_font=(
+                                                               font=(
                                                                    "Roboto Medium", -16))  # font name and size in px
         self.lbl_board_component_side.grid(row=4, column=0, padx=5, pady=5, sticky="we")
         board_component_side_options = [
@@ -397,7 +397,7 @@ class App(customtkinter.CTk):
 
         self.lbl_board_components_width = customtkinter.CTkLabel(master=self.board_components_frame,
                                                                  text="Width:",
-                                                                 text_font=("Roboto Medium", -16))
+                                                                 font=("Roboto Medium", -16))
         self.lbl_board_components_width.grid(row=5, column=0, padx=5, pady=5, sticky="we")
 
         self.ent_board_components_width = customtkinter.CTkEntry(master=self.board_components_frame, width=120)
@@ -405,7 +405,7 @@ class App(customtkinter.CTk):
 
         self.lbl_board_components_length = customtkinter.CTkLabel(master=self.board_components_frame,
                                                                   text="Length:",
-                                                                  text_font=("Roboto Medium", -16))
+                                                                  font=("Roboto Medium", -16))
         self.lbl_board_components_length.grid(row=6, column=0, padx=5, pady=5, sticky="we")
 
         self.ent_board_components_length = customtkinter.CTkEntry(master=self.board_components_frame, width=120)
@@ -413,7 +413,7 @@ class App(customtkinter.CTk):
 
         self.lbl_board_components_x_pos = customtkinter.CTkLabel(master=self.board_components_frame,
                                                                  text="X Position:",
-                                                                 text_font=("Roboto Medium", -16))
+                                                                 font=("Roboto Medium", -16))
         self.lbl_board_components_x_pos.grid(row=7, column=0, padx=5, pady=5, sticky="we")
 
         self.ent_board_components_x_pos = customtkinter.CTkEntry(master=self.board_components_frame, width=120)
@@ -421,7 +421,7 @@ class App(customtkinter.CTk):
 
         self.lbl_board_components_y_pos = customtkinter.CTkLabel(master=self.board_components_frame,
                                                                  text="Y Position:",
-                                                                 text_font=("Roboto Medium", -16))
+                                                                 font=("Roboto Medium", -16))
         self.lbl_board_components_y_pos.grid(row=8, column=0, padx=5, pady=5, sticky="we")
 
         self.ent_board_components_y_pos = customtkinter.CTkEntry(master=self.board_components_frame, width=120)
@@ -630,8 +630,8 @@ class App(customtkinter.CTk):
         self.board_settings_frame.grid(row=1, column=0, sticky="nswe", padx=5, pady=5)
 
         self.btn_board_settings.configure(fg_color=("gray75", "gray30"))
-        self.btn_layer_settings.configure(fg_color=None)
-        self.btn_board_component_settings.configure(fg_color=None)
+        self.btn_layer_settings.configure(fg_color='transparent')
+        self.btn_board_component_settings.configure(fg_color='transparent')
 
     def view_layer_settings(self):
         self.board_settings_frame.grid_remove()
@@ -639,8 +639,8 @@ class App(customtkinter.CTk):
         self.layer_settings_frame.grid(row=1, column=0, sticky="nswe", padx=5, pady=5)
 
         self.btn_layer_settings.configure(fg_color=("gray75", "gray30"))
-        self.btn_board_settings.configure(fg_color=None)
-        self.btn_board_component_settings.configure(fg_color=None)
+        self.btn_board_settings.configure(fg_color='transparent')
+        self.btn_board_component_settings.configure(fg_color='transparent')
 
     def view_board_component_settings(self):
         self.board_settings_frame.grid_remove()
@@ -648,8 +648,8 @@ class App(customtkinter.CTk):
         self.board_components_frame.grid(row=1, column=0, sticky="nswe", padx=5, pady=5)
 
         self.btn_board_component_settings.configure(fg_color=("gray75", "gray30"))
-        self.btn_layer_settings.configure(fg_color=None)
-        self.btn_board_settings.configure(fg_color=None)
+        self.btn_layer_settings.configure(fg_color='transparent')
+        self.btn_board_settings.configure(fg_color='transparent')
 
     # simulation settings
     def create_sim_setup(self):
@@ -697,7 +697,7 @@ class App(customtkinter.CTk):
 
         self.lbl_sim_resolution = customtkinter.CTkLabel(master=self.sim_settings_frame,
                                                          text="Resolution [mil]:",
-                                                         text_font=(
+                                                         font=(
                                                              "Roboto Medium", -16))  # font name and size in px
         self.lbl_sim_resolution.grid(row=0, column=0, padx=5, pady=5, sticky="we")
 
@@ -706,7 +706,7 @@ class App(customtkinter.CTk):
 
         self.lbl_sim_ambient = customtkinter.CTkLabel(master=self.sim_settings_frame,
                                                       text="Ambient Temp [C]:",
-                                                      text_font=(
+                                                      font=(
                                                           "Roboto Medium", -16))  # font name and size in px
         self.lbl_sim_ambient.grid(row=1, column=0, padx=5, pady=5, sticky="we")
 
@@ -715,7 +715,7 @@ class App(customtkinter.CTk):
 
         self.lbl_sim_board_orient = customtkinter.CTkLabel(master=self.sim_settings_frame,
                                                            text="Board Orientation:",
-                                                           text_font=(
+                                                           font=(
                                                                "Roboto Medium", -16))  # font name and size in px
         self.lbl_sim_board_orient.grid(row=2, column=0, padx=5, pady=5, sticky="we")
 
@@ -737,7 +737,7 @@ class App(customtkinter.CTk):
 
         self.lbl_sim_cond_k_in_plane = customtkinter.CTkLabel(master=self.sim_tuning_frame,
                                                       text="Conductor 'k', in-plane:",
-                                                      text_font=(
+                                                      font=(
                                                           "Roboto Medium", -16))  # font name and size in px
         self.lbl_sim_cond_k_in_plane.grid(row=0, column=0, padx=5, pady=5, sticky="we")
 
@@ -746,7 +746,7 @@ class App(customtkinter.CTk):
 
         self.lbl_sim_cond_k_thru_plane = customtkinter.CTkLabel(master=self.sim_tuning_frame,
                                                               text="Conductor 'k', through-plane:",
-                                                              text_font=(
+                                                              font=(
                                                                   "Roboto Medium", -16))  # font name and size in px
         self.lbl_sim_cond_k_thru_plane.grid(row=1, column=0, padx=5, pady=5, sticky="we")
 
@@ -755,7 +755,7 @@ class App(customtkinter.CTk):
 
         self.lbl_sim_diel_k_in_plane = customtkinter.CTkLabel(master=self.sim_tuning_frame,
                                                               text="Dielectric 'k', in-plane:",
-                                                              text_font=(
+                                                              font=(
                                                                   "Roboto Medium", -16))  # font name and size in px
         self.lbl_sim_diel_k_in_plane.grid(row=2, column=0, padx=5, pady=5, sticky="we")
 
@@ -764,7 +764,7 @@ class App(customtkinter.CTk):
 
         self.lbl_sim_diel_k_thru_plane = customtkinter.CTkLabel(master=self.sim_tuning_frame,
                                                                 text="Dielectric 'k', through-plane:",
-                                                                text_font=(
+                                                                font=(
                                                                     "Roboto Medium", -16))  # font name and size in px
         self.lbl_sim_diel_k_thru_plane.grid(row=3, column=0, padx=5, pady=5, sticky="we")
 
@@ -773,7 +773,7 @@ class App(customtkinter.CTk):
 
         self.lbl_sim_conv_coef = customtkinter.CTkLabel(master=self.sim_tuning_frame,
                                                               text="PCB Convection Coefficient:",
-                                                              text_font=(
+                                                              font=(
                                                                   "Roboto Medium", -16))  # font name and size in px
         self.lbl_sim_conv_coef.grid(row=4, column=0, padx=5, pady=5, sticky="we")
 
@@ -782,7 +782,7 @@ class App(customtkinter.CTk):
 
         self.lbl_sim_rad_coef = customtkinter.CTkLabel(master=self.sim_tuning_frame,
                                                                 text="PCB Radiation Coefficient:",
-                                                                text_font=(
+                                                                font=(
                                                                     "Roboto Medium", -16))  # font name and size in px
         self.lbl_sim_rad_coef.grid(row=5, column=0, padx=5, pady=5, sticky="we")
 
@@ -791,7 +791,7 @@ class App(customtkinter.CTk):
 
         self.lbl_sim_rad_pow = customtkinter.CTkLabel(master=self.sim_tuning_frame,
                                                        text="PCB Radiation Power:",
-                                                       text_font=(
+                                                       font=(
                                                            "Roboto Medium", -16))  # font name and size in px
         self.lbl_sim_rad_pow.grid(row=6, column=0, padx=5, pady=5, sticky="we")
 
@@ -800,7 +800,7 @@ class App(customtkinter.CTk):
 
         self.lbl_sim_comp_htc = customtkinter.CTkLabel(master=self.sim_tuning_frame,
                                                       text="Component HTC Coefficient:",
-                                                      text_font=(
+                                                      font=(
                                                           "Roboto Medium", -16))  # font name and size in px
         self.lbl_sim_comp_htc.grid(row=7, column=0, padx=5, pady=5, sticky="we")
 
@@ -849,13 +849,13 @@ class App(customtkinter.CTk):
 
         self.lbl_load_edit = customtkinter.CTkLabel(master=self.sim_loads_frame,
                                                     text="Load Properties:",
-                                                    text_font=(
+                                                    font=(
                                                         "Roboto Medium", -16))  # font name and size in px
         self.lbl_load_edit.grid(row=3, column=0, columnspan=3, padx=5, pady=5, sticky="we")
 
         self.lbl_load_name = customtkinter.CTkLabel(master=self.sim_loads_frame,
                                                     text="Name:",
-                                                    text_font=(
+                                                    font=(
                                                         "Roboto Medium", -16))  # font name and size in px
         self.lbl_load_name.grid(row=4, column=0, padx=5, pady=5, sticky="we")
         self.ent_load_name = customtkinter.CTkEntry(master=self.sim_loads_frame, width=120)
@@ -863,7 +863,7 @@ class App(customtkinter.CTk):
 
         self.lbl_load_layer = customtkinter.CTkLabel(master=self.sim_loads_frame,
                                                      text="Layer:",
-                                                     text_font=(
+                                                     font=(
                                                          "Roboto Medium", -16))  # font name and size in px
         self.lbl_load_layer.grid(row=5, column=0, padx=5, pady=5, sticky="we")
         load_layer_options = self.board_layer_names
@@ -876,7 +876,7 @@ class App(customtkinter.CTk):
 
         self.lbl_load_current = customtkinter.CTkLabel(master=self.sim_loads_frame,
                                                        text="Current:",
-                                                       text_font=(
+                                                       font=(
                                                            "Roboto Medium", -16))  # font name and size in px
         self.lbl_load_current.grid(row=6, column=0, padx=5, pady=5, sticky="we")
 
@@ -885,7 +885,7 @@ class App(customtkinter.CTk):
 
         self.lbl_load_x_start = customtkinter.CTkLabel(master=self.sim_loads_frame,
                                                        text="X Start Location:",
-                                                       text_font=(
+                                                       font=(
                                                            "Roboto Medium", -16))  # font name and size in px
         self.lbl_load_x_start.grid(row=7, column=0, padx=5, pady=5, sticky="we")
 
@@ -894,7 +894,7 @@ class App(customtkinter.CTk):
 
         self.lbl_load_y_start = customtkinter.CTkLabel(master=self.sim_loads_frame,
                                                        text="Y Start Location:",
-                                                       text_font=(
+                                                       font=(
                                                            "Roboto Medium", -16))  # font name and size in px
         self.lbl_load_y_start.grid(row=8, column=0, padx=5, pady=5, sticky="we")
 
@@ -903,7 +903,7 @@ class App(customtkinter.CTk):
 
         self.lbl_load_x_end = customtkinter.CTkLabel(master=self.sim_loads_frame,
                                                      text="X End Location:",
-                                                     text_font=(
+                                                     font=(
                                                          "Roboto Medium", -16))  # font name and size in px
         self.lbl_load_x_end.grid(row=9, column=0, padx=5, pady=5, sticky="we")
 
@@ -912,7 +912,7 @@ class App(customtkinter.CTk):
 
         self.lbl_load_y_end = customtkinter.CTkLabel(master=self.sim_loads_frame,
                                                      text="Y End Location:",
-                                                     text_font=(
+                                                     font=(
                                                          "Roboto Medium", -16))  # font name and size in px
         self.lbl_load_y_end.grid(row=10, column=0, padx=5, pady=5, sticky="we")
 
@@ -997,13 +997,13 @@ class App(customtkinter.CTk):
 
         self.lbl_component_heat_edit = customtkinter.CTkLabel(master=self.sim_components_frame,
                                                               text="Component Heat Properties:",
-                                                              text_font=(
+                                                              font=(
                                                                   "Roboto Medium", -16))  # font name and size in px
         self.lbl_component_heat_edit.grid(row=2, column=0, columnspan=3, padx=5, pady=5, sticky="we")
 
         self.lbl_component_name = customtkinter.CTkLabel(master=self.sim_components_frame,
                                                          text="Component:",
-                                                         text_font=(
+                                                         font=(
                                                              "Roboto Medium", -16))  # font name and size in px
         self.lbl_component_name.grid(row=3, column=0, padx=5, pady=5, sticky="we")
         if len(self.board_component_names) > 0:
@@ -1021,7 +1021,7 @@ class App(customtkinter.CTk):
 
         self.lbl_component_heat = customtkinter.CTkLabel(master=self.sim_components_frame,
                                                          text="Heat [W]:",
-                                                         text_font=(
+                                                         font=(
                                                              "Roboto Medium", -16))  # font name and size in px
         self.lbl_component_heat.grid(row=4, column=0, padx=5, pady=5, sticky="we")
         self.ent_component_heat = customtkinter.CTkEntry(master=self.sim_components_frame, width=120)
@@ -1214,9 +1214,9 @@ class App(customtkinter.CTk):
         self.sim_components_frame.grid_remove()
 
         self.btn_sim_settings.configure(fg_color=("gray75", "gray30"))
-        self.btn_sim_tuning.configure(fg_color=None)
-        self.btn_loads_settings.configure(fg_color=None)
-        self.btn_component_settings.configure(fg_color=None)
+        self.btn_sim_tuning.configure(fg_color='transparent')
+        self.btn_loads_settings.configure(fg_color='transparent')
+        self.btn_component_settings.configure(fg_color='transparent')
 
     def view_sim_tuning(self):
         self.sim_settings_frame.grid_remove()
@@ -1224,10 +1224,10 @@ class App(customtkinter.CTk):
         self.sim_loads_frame.grid_remove()
         self.sim_components_frame.grid_remove()
 
-        self.btn_sim_settings.configure(fg_color=None)
+        self.btn_sim_settings.configure(fg_color='transparent')
         self.btn_sim_tuning.configure(fg_color=("gray75", "gray30"))
-        self.btn_loads_settings.configure(fg_color=None)
-        self.btn_component_settings.configure(fg_color=None)
+        self.btn_loads_settings.configure(fg_color='transparent')
+        self.btn_component_settings.configure(fg_color='transparent')
 
     def view_loads_settings(self):
         self.sim_settings_frame.grid_remove()
@@ -1235,10 +1235,10 @@ class App(customtkinter.CTk):
         self.sim_loads_frame.grid(row=1, column=0, sticky="nswe", padx=5, pady=5)
         self.sim_components_frame.grid_remove()
 
-        self.btn_sim_settings.configure(fg_color=None)
-        self.btn_sim_tuning.configure(fg_color=None)
+        self.btn_sim_settings.configure(fg_color='transparent')
+        self.btn_sim_tuning.configure(fg_color='transparent')
         self.btn_loads_settings.configure(fg_color=("gray75", "gray30"))
-        self.btn_component_settings.configure(fg_color=None)
+        self.btn_component_settings.configure(fg_color='transparent')
 
     def view_components_settings(self):
         self.sim_settings_frame.grid_remove()
@@ -1246,9 +1246,9 @@ class App(customtkinter.CTk):
         self.sim_loads_frame.grid_remove()
         self.sim_components_frame.grid(row=1, column=0, sticky="nswe", padx=5, pady=5)
 
-        self.btn_sim_settings.configure(fg_color=None)
-        self.btn_sim_tuning.configure(fg_color=None)
-        self.btn_loads_settings.configure(fg_color=None)
+        self.btn_sim_settings.configure(fg_color='transparent')
+        self.btn_sim_tuning.configure(fg_color='transparent')
+        self.btn_loads_settings.configure(fg_color='transparent')
         self.btn_component_settings.configure(fg_color=("gray75", "gray30"))
 
     # results settings
@@ -1290,7 +1290,7 @@ class App(customtkinter.CTk):
         self.result_layer_text = "Layer: "
         self.lbl_results_layer = customtkinter.CTkLabel(master=self.results_edit,
                                                         text=self.result_layer_text,
-                                                        text_font=(
+                                                        font=(
                                                             "Roboto Medium", -16))  # font name and size in px
         self.lbl_results_layer.grid(row=1, column=0, padx=5, pady=5, sticky="we")
 
@@ -1350,21 +1350,21 @@ class App(customtkinter.CTk):
 
     def OnResultConductor(self):
         self.btn_results_conductor.configure(fg_color=("gray75", "gray30"))
-        self.btn_results_losses.configure(fg_color=None)
-        self.btn_results_temperature.configure(fg_color=None)
+        self.btn_results_losses.configure(fg_color='transparent')
+        self.btn_results_temperature.configure(fg_color='transparent')
         self.results_state = 0
         self.results_plot_update()
 
     def OnResultLosses(self):
-        self.btn_results_conductor.configure(fg_color=None)
+        self.btn_results_conductor.configure(fg_color='transparent')
         self.btn_results_losses.configure(fg_color=("gray75", "gray30"))
-        self.btn_results_temperature.configure(fg_color=None)
+        self.btn_results_temperature.configure(fg_color='transparent')
         self.results_state = 1
         self.results_plot_update()
 
     def OnResultsTemperature(self):
-        self.btn_results_conductor.configure(fg_color=None)
-        self.btn_results_losses.configure(fg_color=None)
+        self.btn_results_conductor.configure(fg_color='transparent')
+        self.btn_results_losses.configure(fg_color='transparent')
         self.btn_results_temperature.configure(fg_color=("gray75", "gray30"))
         self.results_state = 2
         self.results_plot_update()
